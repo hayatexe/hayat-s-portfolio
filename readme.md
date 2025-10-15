@@ -175,3 +175,21 @@ Unless you have a separate commercial agreement, your use of this software is un
 ## SPDX header for source files
 
 Add this header to each source file:
+<!-- Attribution
+
+- Copyright (c) 2025 Hayat
+- See `NOTICE.md` for attribution requirements.
+
+Contributing
+
+We welcome contributions! To keep dual-licensing possible:
+
+- You must agree to the Contributor License Agreement (CLA). See `CLA.md`.
+- Open a PR and check the CLA box in the PR template.
+- Add the SPDX header above in each new/modified source file.
+- See `CONTRIBUTING.md` for details.
+
+Contact
+
+- Commercial inquiries: hayatexeler@gmail.com
+- Issues and PRs: via GitHub --->
