@@ -1,0 +1,40 @@
+# ================================
+# ENVIRONMENT VARIABLES
+# ================================
+.env
+.env.local
+.env.production
+
+# ================================
+# NODE MODULES (if using)
+# ================================
+node_modules/
+package-lock.json
+yarn.lock
+
+# ================================
+# IDE/EDITOR FILES
+# ================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ================================
+# BUILD OUTPUT
+# ================================
+dist/
+build/
+*.log
+
+# ================================
+# CONFIG FILES WITH SENSITIVE DATA
+# ================================
+config.js
+js/config.js
+
+# BUT keep the example/template
+!config.example.js
+!js/config.example.js

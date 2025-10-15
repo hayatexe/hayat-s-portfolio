@@ -1,0 +1,416 @@
+<!-- Attribution
+
+- Copyright (c) 2025 Hayat
+- See `NOTICE.md` for attribution requirements.
+
+Contributing
+
+We welcome contributions! To keep dual-licensing possible:
+
+- You must agree to the Contributor License Agreement (CLA). See `CLA.md`.
+- Open a PR and check the CLA box in the PR template.
+- Add the SPDX header above in each new/modified source file.
+- See `CONTRIBUTING.md` for details.
+
+Contact
+
+- Commercial inquiries: hayatexeler@gmail.com
+- Issues and PRs: via GitHub --->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="hayatexe.com" src="https://plausible.io/js/script.js"></script>
+    <!-- Primary Meta Tags -->
+    <title>Hayat - Software Engineer & Aviation Enthusiast | AI Developer Portfolio</title>
+    <meta name="title" content="Hayat - Software Engineer & Aviation Enthusiast | AI Developer Portfolio">
+    <meta name="description"
+        content="Hayat is a passionate software engineer, AI developer, and aviation enthusiast from Ankara, Turkey. Specializing in Python, JavaScript, C#, Unity, and machine learning. Creator of ALICE AI. Explore my projects, skills, and experience in software development, game physics, and aviation technology.">
+    <meta name="publisher"
+        content="Hayat, Software Engineer, AI Developer, Python Developer, JavaScript, C#, Unity, Machine Learning, Aviation Enthusiast, Game Physics, Web Development, ALICE AI, Portfolio, Ankara Turkey, Flight Simulator, Chess, Full Stack Developer">
+    <meta name="author" content="Hayat">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta property="og:site_name" content="Hayat Portfolio">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hayatexe.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hayatexe.com/">
+    <meta property="og:title" content="Hayat - Software Engineer & Aviation Enthusiast | AI Developer Portfolio">
+    <meta property="og:description"
+        content="Passionate software engineer and AI developer from Ankara, Turkey. Creator of ALICE AI. Specializing in Python, JavaScript, C#, Unity, and machine learning.">
+    <meta property="og:image" content="https://hayatexe.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Hayat Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hayatexe.com/">
+    <meta name="twitter:title" content="Hayat - Software Engineer & Aviation Enthusiast">
+    <meta name="twitter:description"
+        content="Passionate software engineer and AI developer from Ankara, Turkey. Creator of ALICE AI. Specializing in Python, JavaScript, C#, Unity, and machine learning.">
+    <meta name="twitter:image" content="https://hayatexe.com/assets/og-image.jpg">
+    <meta name="twitter:creator" content="@hayatexew">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#00d4ff">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">HAYAT</span>
+                <span class="logo-cursor">_</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <span class="availability-badge" title="Weekly availability">~30h/wk</span>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-greeting">
+                    <span class="wave">👋</span>
+                    <span>Hello, I'm</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="name-highlight">Hayat</span>
+                </h1>
+
+                <div class="hero-roles">
+                    <span class="role-prefix">I'm a</span>
+                    <span class="role-text" id="roleText"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+
+                <p class="hero-description">
+                    A passionate software engineer and aviation enthusiast from Ankara, Turkey.
+                    I build intelligent systems, craft immersive experiences, and dream of the skies.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="/contact" class="btn btn-primary" title="Start a project with me">
+                        <span>Start a Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/contact" class="btn btn-secondary" title="Get in touch with me">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/hayatexe" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/resul-can-kaya-baa33b382" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hayatexew" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://discord.com/users/872564507883499570" target="_blank" rel="noopener noreferrer"
+                        aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:hayatexeler@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-container">
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring"></div>
+                    <img src="assets/profile.jpg" alt="Hayat - Software Engineer" class="profile-image"
+                        id="profileImage">
+                    <div class="profile-tooltip">✈️ Click me!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    </section>
+    <!-- End of Hero Section -->
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Languages Mastered</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label">AI Created</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="stat-number" data-target="1328">0</div>
+                    <div class="stat-label">Flight Hours (Sim)</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <div class="stat-number" data-target="7 ">0</div>
+                    <div class="stat-label">Years Coding</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line"></span>
+                Featured Highlights
+                <span class="title-line"></span>
+            </h2>
+
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <div class="featured-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ALICE AI</h3>
+                    <p>My first major project - an intelligent AI assistant built from scratch at 2023. ALICE helped
+                        me understand machine learning and natural language processing.</p>
+                    <a href="projects.html" class="featured-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="featured-card">
+                    <div class="featured-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Aviation Passion</h3>
+                    <p>From air-to-air missiles to flight simulators, I combine my love for aviation with technical
+                        expertise in physics and simulation.</p>
+                    <a href="about.html" class="featured-link">
+                        Discover More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="featured-card">
+                    <div class="featured-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Game Physics Dev</h3>
+                    <p>Interned as a Physics Developer at a Game Dev Studio, working on realistic physics simulations
+                        for immersive gaming experiences.</p>
+                    <a href="experience.html" class="featured-link">
+                        View Experience <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote-block">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="quote-text">
+                    "To give without any reward, or any notice, has a special quality of its own."
+                </p>
+                <cite class="quote-author">— Anne Morrow Lindbergh</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Build Something Amazing Together</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    <span>Start a Conversation</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>HAYAT</h3>
+                    <p class="footer-motto">"The most beautiful revenge is to forgive."</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigate</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="skills.html">Skills</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/hayatexe" target="_blank">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/resul-can-kaya-baa33b382"
+                                    target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.instagram.com/hayatexew" target="_blank">Instagram</a></li>
+                            <li><a href="mailto:hayatexeler@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Location</h4>
+                        <p>Ankara, Turkey</p>
+                        <p class="footer-discord">
+                            Discord: <a href="https://discord.com/users/872564507883499570" target="_blank"
+                                rel="noopener">hayat0002</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hayat. Crafted with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
+                <p class="easter-egg-hint">Psst... Try clicking around! 🎮</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hayat",
+      "url": "https://hayatexe.com",
+      "image": "https://hayatexe.com/assets/profile.jpg",
+      "sameAs": [
+        "https://github.com/hayatexe",
+        "https://www.linkedin.com/in/resul-can-kaya-baa33b382",
+        "https://www.instagram.com/hayatexew",
+        "https://discord.com/users/872564507883499570"
+      ],
+      "jobTitle": "Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Developer"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ankara",
+        "addressCountry": "TR"
+      },
+      "knowsAbout": ["Software Development", "Artificial Intelligence", "Python", "JavaScript", "C#", "Unity", "Machine Learning", "Game Physics", "Aviation"],
+      "description": "Passionate software engineer and AI developer from Ankara, Turkey. Creator of ALICE AI."
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Web Vitals (optional live widget) -->
+    <div id="webVitals" class="web-vitals" aria-hidden="true"></div>
+    <script src="https://unpkg.com/web-vitals@4/dist/web-vitals.iife.js"></script>
+    <script>
+        (function () {
+            const c = document.getElementById('webVitals');
+            if (!c) return;
+            const chip = (k, v) => `<span class="wv-chip"><strong>${k}</strong> ${v}</span>`;
+            const fmt = (n) => (typeof n === 'number' ? n.toFixed(2) : n);
+            const paint = (name, val) => {
+                c.innerHTML += chip(name, fmt(val));
+            };
+            webVitals.getLCP(m => paint('LCP', m.value));
+            webVitals.getCLS(m => paint('CLS', m.value));
+            webVitals.getINP(m => paint('INP', m.value));
+        })();
+    </script>
+</body>
+
+</html>
