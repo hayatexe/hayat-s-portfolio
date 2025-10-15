@@ -1,195 +1,107 @@
-# <hayat's Portfolio>
+<div align="center">
 
+# 🌟 Hayat's Portfolio
 
-A fast, modern, multi‑page personal website to showcase projects, skills, experience, and provide easy contact. Built with semantic HTML, modern CSS, vanilla JS, and tasteful GSAP animations. Optimized for SEO, clean URLs, and privacy‑friendly analytics.
+### A Modern, Fast & Privacy-Focused Personal Website
 
-Live: https://hayatexe.com
-Author: Hayat (hayatexe.com)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge&logo=vercel)](https://hayatexe.com)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](./LICENSE.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](./CONTRIBUTING.md)
 
-Features
-Multi‑page site
-Home, About, Projects, Skills, Experience, Contact
-Clean URLs (no .html), HTTPS + non‑www redirect
-Dark/Light theme toggle
-Smooth scroll animations (GSAP + ScrollTrigger) and canvas particle hero
-Animated counters, section reveals, interactive cards
-Contact form via EmailJS (no backend required)
-SEO‑ready
-Per‑page meta tags, canonical links
-Open Graph + Twitter cards
-JSON‑LD Person schema
-Favicons + Web App Manifest
-External link hardening (rel="noopener noreferrer nofollow")
-Privacy‑friendly analytics (Plausible)
-Optional: inline Web Vitals mini widget (LCP/CLS/INP)
-Tech Stack
-HTML5, CSS3 (custom properties, Grid, Flexbox), Vanilla JavaScript
-GSAP 3 + ScrollTrigger
-EmailJS (contact form)
-Plausible (analytics)
-Apache/LiteSpeed (.htaccess rewrites for clean URLs)
-Project Structure
-text
+**[Live Demo](https://hayatexe.com)** • **[Report Bug](https://github.com/hayatexe/hayat-s-portfolio/issues)** • **[Request Feature](https://github.com/hayatexe/hayat-s-portfolio/issues)**
 
-.
-├── index.html
-├── about.html
-├── projects.html
-├── skills.html
-├── experience.html
-├── contact.html
-├── css/
-│   ├── theme.css
-│   ├── style.css
-│   └── animations.css
-├── js/
-│   ├── theme.js
-│   ├── main.js
-│   ├── animations.js
-│   └── contact.js
-├── assets/
-│   ├── profile.jpg           # add your photo
-│   └── favicon/
-│       ├── favicon.ico
-│       ├── favicon-32x32.png
-│       ├── apple-touch-icon.png
-│       ├── android-chrome-192x192.png
-│       └── android-chrome-512x512.png
-├── site.webmanifest
-└── .htaccess                 # on hosting (see below)
-Getting Started (Local)
-Because the site uses clean URLs (/about instead of about.html), you should use a local server (not file://).
+![Portfolio Screenshot](./assets/site.png)
 
-Open the folder in VS Code
-Install the “Live Server” extension
-Right‑click index.html → “Open with Live Server”
-Visit http://127.0.0.1:5500/
+</div>
 
-Hosting & Clean URLs
-For cPanel/Apache/LiteSpeed, put this .htaccess in the document root (public_html):
+---
 
-apache
+## 📖 Table of Contents
 
-# Clean URLs for hayatexe.com (no .html)
-# HTTPS + non‑www + hide /index.html
+- [About](#-about)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Quick Start](#-quick-start)
+- [Configuration](#-configuration)
+- [Deployment](#-deployment)
+- [Project Structure](#-project-structure)
+- [License](#-license)
+- [Contributing](#-contributing)
+- [Contact](#-contact)
 
-Options -MultiViews
-DirectoryIndex index.html
+---
 
-RewriteEngine On
+## 🎯 About
 
-# Force HTTPS
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+A fast, modern, multi-page personal website built to showcase projects, skills, experience, and provide easy contact. Designed with performance, SEO, and privacy in mind.
 
-# Force non‑www
-RewriteCond %{HTTP_HOST} ^www\.hayatexe\.com$ [NC]
-RewriteRule ^ https://hayatexe.com%{REQUEST_URI} [L,R=301]
+### Why This Portfolio?
 
-# /index.html -> /
-RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-RewriteRule ^index\.html$ / [R=301,L]
+- ✅ **No Framework Bloat** – Pure HTML, CSS, JavaScript
+- ✅ **Fast & Lightweight** – Optimized for performance
+- ✅ **SEO Optimized** – Meta tags, Open Graph, JSON-LD schema
+- ✅ **Privacy-Friendly** – Plausible analytics (no cookies)
+- ✅ **Easy to Customize** – Well-organized, documented code
+- ✅ **Dual-Licensed** – GPL-3.0 or Commercial use available
 
-# .html -> extensionless (canonicalize)
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ %1 [R=301,L]
+---
 
-# Do not rewrite existing files/dirs
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+## ✨ Features
 
-# Skip static assets
-RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot|mp4|webm|ogg|pdf|txt|xml|json|webmanifest|map)$ [NC]
-RewriteRule ^ - [L]
+### 🎨 User Experience
+- **Multi-page Architecture** – Home, About, Projects, Skills, Experience, Contact
+- **Dark/Light Theme Toggle** – System preference detection with manual override
+- **Smooth Animations** – GSAP-powered scroll reveals and interactions
+- **Particle Hero Section** – Canvas-based animated background
+- **Responsive Design** – Mobile-first, works on all devices
 
-# Map extensionless to .html internally
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.+)$ $1.html [L]
+### 🚀 Performance & SEO
+- **Clean URLs** – `/about` instead of `/about.html`
+- **Optimized Assets** – Compressed images, minified CSS/JS
+- **Fast Load Times** – Minimal dependencies, async loading
+- **SEO-Ready** – Per-page meta tags, canonical links, sitemap.xml
+- **Progressive Web App** – Web App Manifest, favicons
 
-# Charset header (optional)
-AddDefaultCharset utf-8
-AddType "text/html; charset=UTF-8" .html .htm
-Netlify
+### 📧 Contact Form
+- **EmailJS Integration** – No backend required
+- **Real-time Validation** – Client-side form validation
+- **Auto-save Drafts** – LocalStorage backup
+- **Spam Protection** – Honeypot field + time-based validation
+- **Success Confetti** – Delightful user feedback
 
-Enable Post processing → Pretty URLs, or add netlify.toml
-Vercel
+### 🔒 Security & Privacy
+- **No Tracking Cookies** – Plausible analytics
+- **External Link Hardening** – `rel="noopener noreferrer nofollow"`
+- **Environment Variables** – Sensitive data separated
+- **CSP Ready** – Content Security Policy compatible
 
-vercel.json:
-JSON
+---
 
-{
-  "cleanUrls": true,
-  "trailingSlash": false
-}
-Cloudflare Pages
+## 🛠️ Tech Stack
 
-Clean URLs: Enable in project settings.
-GitHub Pages
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | HTML5, CSS3 (Grid, Flexbox, Custom Properties) |
+| **JavaScript** | Vanilla ES6+ |
+| **Animations** | GSAP 3.x + ScrollTrigger |
+| **Email Service** | EmailJS |
+| **Analytics** | Plausible.io |
+| **Server** | Apache/LiteSpeed (.htaccess) |
+| **Hosting** | Compatible with Netlify, Vercel, GitHub Pages, cPanel |
 
-Native rewrites aren’t supported; use folder/index.html structure or a single‑page fallback.
-EmailJS (Contact Form)
-Add EmailJS script (already in contact.html):
-HTML
+---
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-Configure js/contact.js:
-Initialize with your PUBLIC KEY:
-JavaScript
+## 🚀 Quick Start
 
-emailjs.init("YOUR_PUBLIC_KEY");
-Update service and template IDs:
-JavaScript
+### Prerequisites
 
-emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-  from_name: formData.name,
-  from_email: formData.email,
-  subject: formData.subject,
-  message: formData.message,
-  reply_to: formData.email
-});
-EmailJS template variables:
-{{from_name}}, {{from_email}}, {{subject}}, {{message}}, {{reply_to}}
-Analytics (Plausible)
-Add to <head> on all pages:
+- Git installed
+- A code editor (VS Code recommended)
+- Live Server (for local development)
+- An EmailJS account (free tier available)
 
-HTML
+### 1️⃣ Clone the Repository
 
-<script defer data-domain="hayatexe.com" src="https://plausible.io/js/script.js"></script>
-
-
-
-This project is dual-licensed. You may choose either:
-
-- GNU General Public License v3.0 or later (GPL-3.0-or-later)
-  - Commercial use is permitted under the GPL, provided you comply with its copyleft terms (e.g., provide source when distributing binaries).
-  - Full text: see `LICENSE.md` or https://www.gnu.org/licenses/gpl-3.0.html
-
-- Hayat Commercial License
-  - For closed-source/proprietary use with no GPL copyleft obligations.
-  - Contact: hayatexeler@gmail.com
-  - Terms: see `COMMERCIAL-LICENSE.md`
-
-Unless you have a separate commercial agreement, your use of this software is under the GPL.
-
-## SPDX header for source files
-
-Add this header to each source file:
-<!-- Attribution
-
-- Copyright (c) 2025 Hayat
-- See `NOTICE.md` for attribution requirements.
-
-Contributing
-
-We welcome contributions! To keep dual-licensing possible:
-
-- You must agree to the Contributor License Agreement (CLA). See `CLA.md`.
-- Open a PR and check the CLA box in the PR template.
-- Add the SPDX header above in each new/modified source file.
-- See `CONTRIBUTING.md` for details.
-
-Contact
-
-- Commercial inquiries: hayatexeler@gmail.com
-- Issues and PRs: via GitHub --->
+```bash
+git clone https://github.com/hayatexe/hayat-s-portfolio.git
+cd hayat-s-portfolio
